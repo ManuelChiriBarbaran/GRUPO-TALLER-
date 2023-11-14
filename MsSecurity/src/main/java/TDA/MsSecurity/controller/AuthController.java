@@ -25,6 +25,8 @@ public class AuthController {
     public ResponseEntity<List<modelUsuario>> getAllUsers() {
         List<modelUsuario> users = authService.getAllUsers();
         return new ResponseEntity<>(users, HttpStatus.OK);
+
+        
     }
    
 
