@@ -18,8 +18,8 @@ public class AuthService {
         return (List<modelUsuario>) authRepository.findAll();
     }
     
-    public modelUsuario getUserById(int id) {
-        return authRepository.findById(id).orElse(null);
+    public modelUsuario getUserById(int idUsuario) {
+        return authRepository.findById(idUsuario).orElse(null);
         }
   
     }
