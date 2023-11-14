@@ -13,7 +13,7 @@ public class modelUsuario {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="idUSuario")
+    @Column(name="idUsuario")
     public int idUsuario;
 
     @Column(name="usuario")
@@ -22,7 +22,7 @@ public class modelUsuario {
     @Column(name="clave")
     public String clave;
 
-    public int getIdUsuario() {
+    public int getIdUSuario() {
         return idUsuario;
     }
 
