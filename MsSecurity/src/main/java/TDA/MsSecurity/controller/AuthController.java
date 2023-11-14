@@ -6,6 +6,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -28,5 +30,12 @@ public class AuthController {
     public modelUsuario getUserById(@PathVariable int id) {
         return authService.getUserById(id);
     }
+
+    @PostMapping("/crear")
+    public ResponseEntity<modelUsuario> createUser(@RequestBody modelUsuario nuevoUsuario) {
+        modelUsuario usuarioCreado = authService.createUser(nuevoUsuario);
+        return new ResponseEntity<>(usuarioCreado, HttpStatus.CREATED);
+    }
+
 }
 
