@@ -26,16 +26,7 @@ public class AuthController {
         List<modelUsuario> users = authService.getAllUsers();
         return new ResponseEntity<>(users, HttpStatus.OK);
     }
-    @GetMapping("/{id}")
-    public modelUsuario getUserById(@PathVariable int id) {
-        return authService.getUserById(id);
-    }
-
-    @PostMapping("/crear")
-    public ResponseEntity<modelUsuario> createUser(@RequestBody modelUsuario nuevoUsuario) {
-        modelUsuario usuarioCreado = authService.createUser(nuevoUsuario);
-        return new ResponseEntity<>(usuarioCreado, HttpStatus.CREATED);
-    }
+   
 
 }
 
