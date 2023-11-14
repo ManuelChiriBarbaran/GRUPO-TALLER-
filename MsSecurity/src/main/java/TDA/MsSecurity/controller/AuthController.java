@@ -46,16 +46,7 @@ public class AuthController {
         return new ResponseEntity<>(usuarioCreado, HttpStatus.CREATED);
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<modelUsuario> updateUser(@PathVariable int id, @RequestBody modelUsuario usuarioActualizado) {
-        modelUsuario usuarioActualizado = authService.updateUser(id, usuarioActualizado);
-
-        if (usuarioActualizado != null) {
-            return new ResponseEntity<>(usuarioActualizado, HttpStatus.OK);
-        } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-    }
+   
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteUser(@PathVariable int id) {
