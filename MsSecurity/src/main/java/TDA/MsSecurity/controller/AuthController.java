@@ -27,7 +27,6 @@ public class AuthController {
     @GetMapping("/{id}")
     public modelUsuario getUserById(@PathVariable int id) {
         return authService.getUserById(id);
-
     }
 }
 
