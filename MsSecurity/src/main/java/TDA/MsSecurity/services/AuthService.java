@@ -14,7 +14,7 @@ public class AuthService {
     @Autowired
     IAuthRepository authRepository;
    
-    public List<modelUsuario>  getAllUsers() {       
+    public List<modelUsuario>getAllUsers() {       
         return (List<modelUsuario>) authRepository.findAll();
     }
    
