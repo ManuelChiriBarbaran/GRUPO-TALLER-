@@ -1,0 +1,16 @@
+{
+    "configurations": [
+        
+
+        {
+            "type": "java",
+            "name": "Spring Boot-MsSecurityApplication<MsSecurity>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "TDA.MsSecurity.MsSecurityApplication",
+            "projectName": "MsSecurity",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
