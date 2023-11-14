@@ -20,14 +20,14 @@ public class AuthController {
     AuthService authService;
 
     @GetMapping
-    public List<modelUsuario> get() {
-        return authService.getAllUsers();
-    }   
+    public ResponseEntity<List<modelUsuario>> getAllUsers() {
+        List<modelUsuario> users = authService.getAllUsers();
+        return new ResponseEntity<>(users, HttpStatus.OK);
+    }
     @GetMapping("/{id}")
     public modelUsuario getUserById(@PathVariable int id) {
         return authService.getUserById(id);
-    }
 
-   
+    }
 }
 
