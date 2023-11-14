@@ -10,12 +10,16 @@ import TDA.MsSecurity.repository.IAuthRepository;
  
 @Service
 public class AuthService {
- 
+
     @Autowired
-    IAuthRepository authRepository;
-   
-    public List<modelUsuario>  getAllUsers() {       
+    private IAuthRepository authRepository;
+
+    public List<modelUsuario> getAllUsers() {
         return (List<modelUsuario>) authRepository.findAll();
     }
-   
+    
+    public modelUsuario getUserById(int id) {
+        return authRepository.findById(id).orElse(null);
+        }
+    // Otros métodos del servicio...
 }
