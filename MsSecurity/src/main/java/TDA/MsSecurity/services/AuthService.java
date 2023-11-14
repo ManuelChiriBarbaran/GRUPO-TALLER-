@@ -21,6 +21,11 @@ public class AuthService {
     public modelUsuario getUserById(int idUsuario) {
         return authRepository.findById(idUsuario).orElse(null);
         }
+
+        public modelUsuario createUser(modelUsuario nuevoUsuario) {
+            // Puedes realizar validaciones u operaciones adicionales aquí si es necesario
+            return authRepository.save(nuevoUsuario);
+        }
   
     }
 
