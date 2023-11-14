@@ -21,5 +21,7 @@ public class AuthService {
     public modelUsuario getUserById(int id) {
         return authRepository.findById(id).orElse(null);
         }
-    // Otros métodos del servicio...
-}
+  
+    }
+
+
