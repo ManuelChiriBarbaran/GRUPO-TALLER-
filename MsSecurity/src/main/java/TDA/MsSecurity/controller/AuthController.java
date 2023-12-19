@@ -20,7 +20,7 @@ import TDA.MsSecurity.services.AuthService;
 @RequestMapping("/api/auth")
 public class AuthController {
 
-    @Autowired
+  @Autowired
     AuthService authService;
 
     @GetMapping
@@ -55,4 +55,6 @@ public class AuthController {
     }
 
 }
+
+
 
