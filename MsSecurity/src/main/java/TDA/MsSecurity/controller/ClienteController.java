@@ -1,5 +1,7 @@
 package TDA.MsSecurity.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,14 +14,17 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import TDA.MsSecurity.model.modelUsuario;
-import TDA.MsSecurity.services.AuthService;
+import TDA.MsSecurity.model.Cliente;
+import TDA.MsSecurity.services.ClienteService;
 
 @RestController
 @RequestMapping("/clientes")
 public class ClienteController {
-    @Autowired
-    private ClienteService clienteService;
+
+
+     @Autowired
+    ClienteService clienteService;
+    
 
     @GetMapping
     public List<Cliente> obtenerClientes() {
@@ -32,7 +37,7 @@ public class ClienteController {
         return ResponseEntity.ok(cliente);
     }
 
-    @PostMapping
+    @PostMapping("/crear")
     public ResponseEntity<Cliente> crearCliente(@RequestBody Cliente cliente) {
         Cliente nuevoCliente = clienteService.crearCliente(cliente);
         return ResponseEntity.status(HttpStatus.CREATED).body(nuevoCliente);
