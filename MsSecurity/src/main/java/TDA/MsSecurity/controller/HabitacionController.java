@@ -1,8 +1,7 @@
 package TDA.MsSecurity.controller;
 
-package TDA.MsSecurity.controller;
-
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,10 +18,15 @@ import TDA.MsSecurity.model.Habitacion;
 import TDA.MsSecurity.services.HabitacionService;
 @RestController
 @RequestMapping("/habitaciones")
-public class HabitacionController {
-    @Autowired
-    private HabitacionService habitacionService;
 
+public class HabitacionController {
+
+    @Autowired
+    HabitacionService habitacionService;
+    
+    /**
+     * @return
+     */
     @GetMapping
     public List<Habitacion> obtenerHabitaciones() {
         return habitacionService.obtenerTodasHabitaciones();
