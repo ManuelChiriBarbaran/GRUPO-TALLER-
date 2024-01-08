@@ -1,10 +1,10 @@
 package TDA.MsSecurity.services;
 
 import java.util.List;
- 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
- 
+
 import TDA.MsSecurity.model.modelUsuario;
 import TDA.MsSecurity.repository.IAuthRepository;
  
@@ -17,6 +17,7 @@ public class AuthService {
     public List<modelUsuario> getAllUsers() {
         return (List<modelUsuario>) authRepository.findAll();
     }
+
     public modelUsuario getUserById(int id) {
         return authRepository.findById(id).orElse(null);
     }
